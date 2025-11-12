@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Predictions</title>
+    <link rel="stylesheet" href="Style/pronoStyle.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img
+            src="image/DALL·E 2025-01-07 18.24.29 - A professional web design mockup for a sports predictions website. The homepage features a clean and modern layout, with a section displaying recent f.webp"
+            alt="Logo"
+            class="logo-img"
+            >
+        </div>
+
+        <nav class="navigation">
+            <a href="#"><b>Home</b></a>
+            <a href="#"><b>About Us</b></a>
+            <a href="The results speak for us.html"><b>Free Predictions</b></a>
+            <a href="https://t.me/+IKjjizLHGIAzN2Nk"><b>VIP Access</b></a>
+        </nav>
+
+        <!-- Bouton menu mobile -->
+        <div class="menu-toggle" id="menu-toggle">
+            ☰
+        </div>
+    </header>
+
+
+    <section class="hero">
+        <h2>Welcome to Sports Predictions</h2>
+        <p>Your trusted source for accurate sports predictions. Join our VIP program for exclusive tips!</p>
+    </section>
+
+    <section id="free" class="section">
+        <h3>Free Predictions</h3>
+        <div class="free-predictions">
+            <div class="prediction">
+                <h4>PRONOSTIC</h4>
+                <ul id="match-list"></ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="vip" class="section">
+        <h3>VIP Access</h3>
+        <p>Welcome to our VIP program! As a member, you'll gain exclusive access to premium predictions, in-depth analysis, and personal tips to help you make smarter sports betting decisions. Here's how you can join:</p>
+        
+        <h4>How to Integrate the VIP Program:</h4>
+        <ul>
+            <li>Click on the "Join VIP Now" button below.</li>
+            <li>You'll be redirected to WhatsApp, where you can contact us directly.</li>
+            <li>Our team will assist you in completing the registration and provide you with further details on how to access the VIP content.</li>
+        </ul>
+
+        <p>Don't miss out on these exclusive insights and premium content. Join the VIP program now and start receiving our top-notch predictions!</p>
+
+        <div class="cta">
+            <!-- Bouton redirigeant vers WhatsApp -->
+            <a href="https://t.me/+IKjjizLHGIAzN2Nk" target="_blank"><button>Join the telegram channel</button></a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Sports Predictions. All rights reserved. <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+    
+    <script>
+            // Récupérer les matchs stockés
+            const matchData = localStorage.getItem("matches") || "No matches available.";
+            const matches = matchData.split("\n");
+
+            // Charger l'état des validations
+            let matchStatus = JSON.parse(localStorage.getItem("matchStatus")) || {};
+
+            // Sélectionner l'élément de la liste des matchs
+            const matchList = document.getElementById("match-list");
+
+            // Générer la liste avec les boutons radio
+            matchList.innerHTML = matches.map((match, index) => {
+                const checkedValid = matchStatus[index] === "valid" ? "checked" : "";
+                const checkedInvalid = matchStatus[index] === "invalid" ? "checked" : "";
+
+
+            }).join('');
+
+            // Fonction pour mettre à jour l'état des matchs
+            function updateStatus(index, status) {
+                matchStatus[index] = status;
+                localStorage.setItem("matchStatus", JSON.stringify(matchStatus));
+            }
+    </script>
+    <script src="Style/script.js2.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    
+</body>
+</html>
