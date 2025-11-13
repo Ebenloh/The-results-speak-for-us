@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Matches</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #1b263b, #0d1b2a);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            width: 80%;
+            max-width: 500px;
+        }
+
+        h3 {
+            margin-bottom: 1rem;
+        }
+
+        textarea {
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            resize: none;
+            outline: none;
+        }
+
+        textarea::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        button {
+            background: #00ccff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 1rem;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #0099cc;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <form id="update-form">
+            <h3>Update Matches</h3>
+            <textarea id="matches" placeholder="Enter match predictions..."></textarea><br>
+            <button type="button" onclick="updateMatches()">Update</button>
+        </form>
+    </div>
+
+    <script>
+        function updateMatches() {
+            const matchList = document.getElementById("matches").value;
+            localStorage.setItem("matches", matchList);
+            alert("Matches updated successfully!");
+        }
+    </script>
+
+</body>
+</html>

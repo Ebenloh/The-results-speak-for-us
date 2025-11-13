@@ -1,0 +1,146 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #0d1b2a, #1b263b);
+    color: #ffffff;
+    background: url(DALL·E\ 2025-01-07\ 18.24.29\ -\ A\ professional\ web\ design\ mockup\ for\ a\ sports\ predictions\ website.\ The\ homepage\ features\ a\ clean\ and\ modern\ layout\,\ with\ a\ section\ displaying\ recent\ f.webp);
+}
+header {
+    background-color: #001f3f;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo{
+    font-size: 2em;
+    color: #fff;
+    user-select: none;
+}
+
+.navigation a{
+    position: relative;
+    font-size: 1.1em;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+.navigation a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+.navigation a:hover::after{
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+.navigation .btnLogin-popup{
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: .5s;
+}
+
+.navigation .btnLogin-popup:hover{
+    background: #fff;
+    color: #162938;
+}
+
+.hero {
+    text-align: center;
+    padding: 1rem;
+    background-color: #162938;
+}
+.hero h2 {
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    color: #ffffff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+.hero p {
+    font-size: 1.2rem;
+}
+.section {
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    width: 80%;
+}
+.section h3 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+.free-predictions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+.free-predictions .prediction {
+    background-color: #004d66;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    flex: 1 1 calc(33.333% - 1rem);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.free-predictions .prediction h4 {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    color: #00ccff;
+}
+.cta {
+    text-align: center;
+    margin: 2rem 0;
+}
+.cta button {
+    background-color: #00ccff;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.cta button:hover {
+    background-color: #0099cc;
+}
+footer {
+    background-color: #001f3f;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+footer a {
+    color: #00ccff;
+    text-decoration: none;
+}
+footer a:hover {
+    text-decoration: underline;
+}
