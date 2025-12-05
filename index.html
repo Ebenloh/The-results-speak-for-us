@@ -1,105 +1,140 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sports Predictions</title>
-    <link rel="stylesheet" href="Style/styleVIP.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sports Predictions</title>
+<link rel="stylesheet" href="Style/styleVIP.css">
+
+<!-- 1. INTÉGRATION DES SDKs FIREBASE (v8.10.0 - Simple HTML) -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+<!-- 2. VOTRE CONFIGURATION FIREBASE ET INITIALISATION -->
+<script>
+    // Votre configuration Firebase (copiée de la console)
+    const firebaseConfig = {
+        apiKey: "AIzaSyBS0PskadPYC5mo0AilAPGmw5ALo6ykIfE",
+        authDomain: "the-results-speak-for-us.firebaseapp.com",
+        databaseURL: "https://the-results-speak-for-us-default-rtdb.firebaseio.com",
+        projectId: "the-results-speak-for-us",
+        storageBucket: "the-results-speak-for-us.firebasestorage.app",
+        messagingSenderId: "88406656052",
+        appId: "1:88406656052:web:8da5ffe99509681fa53661",
+        measurementId: "G-YN7QVYVDP1"
+    };
+
+    // Initialisation de Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.database(); // Référence à la Realtime Database
+</script>
+
+
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <img
-            src="font"
-            alt="Logo"
-            class="logo-img"
-            >
+<header>
+<div class="logo">
+<!-- RAPPEL : Vous devez corriger ce chemin (font n'est pas une image) -->
+<img
+src="font"
+alt="Logo"
+class="logo-img"
+>
+</div>
+
+    <nav class="navigation">
+        <a href="#"><b>Home</b></a>
+        <a href="#"><b>About Us</b></a>
+        <a href="The results speak for us.html"><b>Free Predictions</b></a>
+        <a href="https://t.me/+IKjjizLHGIAzN2Nk"><b>VIP Access</b></a>
+    </nav>
+
+    <!-- Bouton menu mobile -->
+    <div class="menu-toggle" id="menu-toggle">
+        ☰
+    </div>
+</header>
+
+
+<section class="hero">
+    <h2>Welcome to Sports Predictions</h2>
+    <p>Your trusted source for accurate sports predictions. Join our VIP program for exclusive tips!</p>
+</section>
+
+<section id="free" class="section">
+    <h3>Free Predictions</h3>
+    <div class="free-predictions">
+        <div class="prediction">
+            <h4>PRONOSTIC</h4>
+            <ul id="match-list">
+                <li>Chargement des matchs depuis la base de données...</li>
+            </ul>
         </div>
+    </div>
+</section>
 
-        <nav class="navigation">
-            <a href="#"><b>Home</b></a>
-            <a href="#"><b>About Us</b></a>
-            <a href="The results speak for us.html"><b>Free Predictions</b></a>
-            <a href="https://t.me/+IKjjizLHGIAzN2Nk"><b>VIP Access</b></a>
-        </nav>
-
-        <!-- Bouton menu mobile -->
-        <div class="menu-toggle" id="menu-toggle">
-            ☰
-        </div>
-    </header>
-
-
-    <section class="hero">
-        <h2>Welcome to Sports Predictions</h2>
-        <p>Your trusted source for accurate sports predictions. Join our VIP program for exclusive tips!</p>
-    </section>
-
-    <section id="free" class="section">
-        <h3>Free Predictions</h3>
-        <div class="free-predictions">
-            <div class="prediction">
-                <h4>PRONOSTIC</h4>
-                <ul id="match-list"></ul>
-            </div>
-        </div>
-    </section>
-
-    <section id="vip" class="section">
-        <h3>VIP Access</h3>
-        <p>Welcome to our VIP program! As a member, you'll gain exclusive access to premium predictions, in-depth analysis, and personal tips to help you make smarter sports betting decisions. Here's how you can join:</p>
-        
-        <h4>How to Integrate the VIP Program:</h4>
-        <ul>
-            <li>Click on the "Join VIP Now" button below.</li>
-            <li>You'll be redirected to WhatsApp, where you can contact us directly.</li>
-            <li>Our team will assist you in completing the registration and provide you with further details on how to access the VIP content.</li>
-        </ul>
-
-        <p>Don't miss out on these exclusive insights and premium content. Join the VIP program now and start receiving our top-notch predictions!</p>
-
-        <div class="cta">
-            <!-- Bouton redirigeant vers WhatsApp -->
-            <a href="https://t.me/+2250769559788" target="_blank"><button>Join the telegram channel</button></a>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 Sports Predictions. All rights reserved. <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
-    </footer>
+<!-- ... (Reste de votre HTML : VIP, Footer, etc.) ... -->
+<section id="vip" class="section">
+    <h3>VIP Access</h3>
+    <p>Welcome to our VIP program! As a member, you'll gain exclusive access to premium predictions, in-depth analysis, and personal tips to help you make smarter sports betting decisions. Here's how you can join:</p>
     
-    <script>
-            // Récupérer les matchs stockés
-            const matchData = localStorage.getItem("matches") || "";
-            const matches = matchData.split("\n");
+    <h4>How to Integrate the VIP Program:</h4>
+    <ul>
+        <li>Click on the "Join VIP Now" button below.</li>
+        <li>You'll be redirected to WhatsApp, where you can contact us directly.</li>
+        <li>Our team will assist you in completing the registration and provide you with further details on how to access the VIP content.</li>
+    </ul>
 
-            // Sélectionner la liste
-            const matchList = document.getElementById("match-list");
+    <p>Don't miss out on these exclusive insights and premium content. Join the VIP program now and start receiving our top-notch predictions!</p>
 
-            // Afficher les matchs SANS boutons
-            matchList.innerHTML = matches
-                .filter(match => match.trim() !== "") // évite les lignes vides
-                .map(match => `<li>${match}</li>`)
-                .join('');
+    <div class="cta">
+        <!-- Bouton redirigeant vers WhatsApp -->
+        <a href="https://t.me/+2250769559788" target="_blank"><button>Join the telegram channel</button></a>
+    </div>
+</section>
 
-            // Fonction pour mettre à jour l'état des matchs
-            function updateStatus(index, status) {
-                matchStatus[index] = status;
-                localStorage.setItem("matchStatus", JSON.stringify(matchStatus));
+<footer>
+    <p>&copy; 2025 Sports Predictions. All rights reserved. <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+</footer>
+
+<!-- 3. SCRIPT DE LECTURE FIREBASE (doit être après l'initialisation dans le head) -->
+<script>
+    // Sélectionner la liste
+    const matchList = document.getElementById("match-list");
+
+    // Fonction de lecture des données depuis Firebase (Lit une seule fois)
+    db.ref('matchs').once('value') 
+        .then((snapshot) => {
+            const matchs = snapshot.val(); 
+            let htmlContent = '';
+
+            if (matchs) {
+                // Les matchs sont stockés comme un objet. On boucle sur les clés (keys)
+                Object.keys(matchs).forEach((key) => {
+                    const match = matchs[key];
+                    // Assurez-vous que votre page admin utilise 'domicile', 'exterieur', 'resultat'
+                    const matchString = `${match.domicile || 'Inconnu'} vs ${match.exterieur || 'Inconnu'} : ${match.resultat || 'N/A'}`;
+                    htmlContent += `<li>${matchString}</li>`;
+                });
+            } else {
+                htmlContent = '<li>Aucun match disponible pour le moment.</li>';
             }
-    </script>
-    <script src="/js/script.js2.js"></script>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    
+
+            // Afficher le contenu
+            matchList.innerHTML = htmlContent;
+        })
+        .catch((error) => {
+            console.error("Erreur de lecture des données Firebase : ", error);
+            matchList.innerHTML = '<li>Erreur lors du chargement des matchs. Veuillez vérifier la console.</li>';
+        });
+</script>
+
+<!-- Scripts finaux -->
+<script src="/js/script.js2.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
