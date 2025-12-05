@@ -1,51 +1,124 @@
 body {
+    position: relative;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to bottom, #0d1b2a, #1b263b);
-    color: #ffffff;
     background: url('../image/DALL·E\ 2025-01-07\ 18.24.29\ -\ A\ professional\ web\ design\ mockup\ for\ a\ sports\ predictions\ website.\ The\ homepage\ features\ a\ clean\ and\ modern\ layout\,\ with\ a\ section\ displaying\ recent\ f.webp');
-}
-header {
-    background-color: #001f3f;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
 }
 
-.logo{
-    font-size: 2em;
-    color: #fff;
-    user-select: none;
-}
-
-.navigation a{
-    position: relative;
-    font-size: 1.1em;
-    color: #fff;
-    text-decoration: none;
-    font-weight: 500;
-    margin-left: 40px;
-}
-
-.navigation a::after{
-    content: '';
+/* 🌑 Overlay pour réduire la luminosité */
+body::before {
+    content: "";
     position: absolute;
+    top: 0;
     left: 0;
-    bottom: -6px;
     width: 100%;
-    height: 3px;
-    background: #fff;
-    border-radius: 5px;
-    transform-origin: right;
-    transform: scaleX(0);
-    transition: transform .5s;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.45); /* Ajuste la valeur pour plus ou moins sombre */
+    z-index: -1;
+    backdrop-filter: brightness(0.7); /* optionnel */
 }
 
-.navigation a:hover::after{
-    transform-origin: left;
-    transform: scaleX(1);
+/* Style général du header */
+header {
+  background-color: #001f3f;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Logo */
+.logo-img {
+  height: 75px;
+  width: 75px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #00bfff;
+  transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+  transform: scale(1.05);
+}
+
+/* Navigation */
+.navigation {
+  display: flex;
+  align-items: center;
+}
+
+.navigation a {
+  position: relative;
+  font-size: 1.1em;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 40px;
+  transition: color 0.3s ease;
+}
+
+.navigation a:hover {
+  color: #00bfff;
+}
+
+/* Ligne animée sous les liens */
+.navigation a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 3px;
+  background: #00bfff;
+  border-radius: 5px;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.5s;
+}
+
+.navigation a:hover::after {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+/* Bouton menu mobile */
+.menu-toggle {
+  display: none;
+  font-size: 2em;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* =========================
+   🧭 Mode Mobile Responsive
+   ========================= */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .navigation {
+    width: 100%;
+    flex-direction: column;
+    display: none;
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .navigation.show {
+    display: flex;
+  }
+
+  .navigation a {
+    margin: 10px 0;
+    font-size: 1.2em;
+  }
 }
 
 .navigation .btnLogin-popup{
@@ -144,4 +217,3 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
-
