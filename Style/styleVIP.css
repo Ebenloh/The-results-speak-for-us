@@ -3,7 +3,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: url('font');
+    background: url('../font');
     background-size: cover;
     background-position: center;
     color: #ffffff;
@@ -217,4 +217,5 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
+
 
