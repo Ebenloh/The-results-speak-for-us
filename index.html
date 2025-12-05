@@ -70,22 +70,17 @@
     
     <script>
             // Récupérer les matchs stockés
-            const matchData = localStorage.getItem("matches") || "No matches available.";
+            const matchData = localStorage.getItem("matches") || "";
             const matches = matchData.split("\n");
 
-            // Charger l'état des validations
-            let matchStatus = JSON.parse(localStorage.getItem("matchStatus")) || {};
-
-            // Sélectionner l'élément de la liste des matchs
+            // Sélectionner la liste
             const matchList = document.getElementById("match-list");
 
-            // Générer la liste avec les boutons radio
-            matchList.innerHTML = matches.map((match, index) => {
-                const checkedValid = matchStatus[index] === "valid" ? "checked" : "";
-                const checkedInvalid = matchStatus[index] === "invalid" ? "checked" : "";
-
-
-            }).join('');
+            // Afficher les matchs SANS boutons
+            matchList.innerHTML = matches
+                .filter(match => match.trim() !== "") // évite les lignes vides
+                .map(match => `<li>${match}</li>`)
+                .join('');
 
             // Fonction pour mettre à jour l'état des matchs
             function updateStatus(index, status) {
@@ -99,5 +94,6 @@
     
 </body>
 </html>
+
 
 
