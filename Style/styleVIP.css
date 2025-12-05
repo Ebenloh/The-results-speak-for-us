@@ -3,7 +3,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: url('../image/DALL·E\ 2025-01-07\ 18.24.29\ -\ A\ professional\ web\ design\ mockup\ for\ a\ sports\ predictions\ website.\ The\ homepage\ features\ a\ clean\ and\ modern\ layout\,\ with\ a\ section\ displaying\ recent\ f.webp');
+    background: url('font');
     background-size: cover;
     background-position: center;
     color: #ffffff;
@@ -217,3 +217,4 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
+
