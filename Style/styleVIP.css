@@ -4,7 +4,7 @@ body {
     padding: 0;
     background: linear-gradient(to bottom, #0d1b2a, #1b263b);
     color: #ffffff;
-    background: url(DALL·E\ 2025-01-07\ 18.24.29\ -\ A\ professional\ web\ design\ mockup\ for\ a\ sports\ predictions\ website.\ The\ homepage\ features\ a\ clean\ and\ modern\ layout\,\ with\ a\ section\ displaying\ recent\ f.webp);
+    background: url('../image/DALL·E\ 2025-01-07\ 18.24.29\ -\ A\ professional\ web\ design\ mockup\ for\ a\ sports\ predictions\ website.\ The\ homepage\ features\ a\ clean\ and\ modern\ layout\,\ with\ a\ section\ displaying\ recent\ f.webp');
 }
 header {
     background-color: #001f3f;
@@ -144,3 +144,4 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
+
